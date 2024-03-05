@@ -1,0 +1,217 @@
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl "https://dummy.restapiexample.com/api/v1/create" -X POST \
+    --data '{ "name":"Mauricio Davalos","salary":"123","age":"23" }' \
+    -H "Content-Type: application/json"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   195    0   140  100    55    211     83 --:--:-- --:--:-- --:--:--   295{"status":"success","data":{"name":"Mauricio Davalos","salary":"123","age":"23","id":5798},"message":"Successfully! Record has been added."}
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl "https://dummy.restapiexample.com/api/v1/update/5798" -X PUT     --data '{ "name":"Sonia","salary":"123","age":"23" }'     -H "Content-Type: application/json"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   165    0   121  100    44    179     65 --:--:-- --:--:-- --:--:--   244{"status":"success","data":{"name":"Sonia","salary":"123","age":"23"},"message":"Successfully! Record has been updated."}
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl "https://dummy.restapiexample.com/api/v1/employee/5798"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    83    0    83    0     0    105      0 --:--:-- --:--:-- --:--:--   105{"status":"success","data":null,"message":"Successfully! Record has been fetched."}
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl -X DELETE "https://dummy.restapiexample.com/api/v1/delete/5798"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    84    0    84    0     0    123      0 --:--:-- --:--:-- --:--:--   123{"status":"success","data":"5798","message":"Successfully! Record has been deleted"}
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl -X DELETE "https://dummy.restapiexample.com/api/v1/delete/5798"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1568    0  1568    0     0   2448      0 --:--:-- --:--:-- --:--:--  2453<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Too Many Requests</title>
+
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 100;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .code {
+                border-right: 2px solid;
+                font-size: 26px;
+                padding: 0 15px 0 15px;
+                text-align: center;
+            }
+
+            .message {
+                font-size: 18px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            <div class="code">
+                429            </div>
+
+            <div class="message" style="padding: 10px;">
+                Too Many Requests            </div>
+        </div>
+    </body>
+</html>
+
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl "https://dummy.restapiexample.com/api/v1/employeeddd/5798"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    77    0    77    0     0    117      0 --:--:-- --:--:-- --:--:--   118{"message":"Error Occured! Page Not found, contact rstapi2example@gmail.com"}
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl "https://dummy.restapiexample.com/api/v1/employeeddd/5798" -v
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 162.241.80.9:443...
+* Connected to dummy.restapiexample.com (162.241.80.9) port 443 (#0)
+* ALPN: offers h2
+* ALPN: offers http/1.1
+*  CAfile: C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+*  CApath: none
+} [5 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [19 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [4096 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [52 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [52 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=www.httpstatus.restapiexample.com
+*  start date: Jan 28 22:23:41 2024 GMT
+*  expire date: Apr 27 22:23:40 2024 GMT
+*  subjectAltName: host "dummy.restapiexample.com" matched cert's "dummy.restapiexample.com"
+*  issuer: C=US; O=Let's Encrypt; CN=R3
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multiplexing
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+} [5 bytes data]
+* h2h3 [:method: GET]
+* h2h3 [:path: /api/v1/employeeddd/5798]
+* h2h3 [:scheme: https]
+* h2h3 [:authority: dummy.restapiexample.com]
+* h2h3 [user-agent: curl/7.87.0]
+* h2h3 [accept: */*]
+* Using Stream ID: 1 (easy handle 0x1925e2410d0)
+} [5 bytes data]
+> GET /api/v1/employeeddd/5798 HTTP/2
+> Host: dummy.restapiexample.com
+> user-agent: curl/7.87.0
+> accept: */*
+>
+{ [5 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [281 bytes data]
+* [CONN-0-0][CF-SSL] TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [281 bytes data]
+* old SSL session ID is stale, removing
+{ [5 bytes data]
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0< HTTP/2 404
+< date: Tue, 05 Mar 2024 01:41:50 GMT
+< server: nginx/1.21.6
+< content-type: application/json
+< cache-control: no-cache, private
+< x-ratelimit-limit: 60
+< x-ratelimit-remaining: 57
+< vary: Accept-Encoding
+< x-endurance-cache-level: 2
+< x-nginx-cache: WordPress
+<
+{ [77 bytes data]
+100    77    0    77    0     0     78      0 --:--:-- --:--:-- --:--:--    78{"message":"Error Occured! Page Not found, contact rstapi2example@gmail.com"}
+* Connection #0 to host dummy.restapiexample.com left intact
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl "https://dummy.restapiexample.com/api/v1/employee/
+> curl "https://dummy.restapiexample.com/api/v1/employee/
+curl: (3) URL using bad/illegal format or missing URL
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl -X DELETE "https://dummy.restapiexample.com/api/v1/delete/########"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   261  100   261    0     0    438      0 --:--:-- --:--:-- --:--:--   439<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://dummy.restapiexample.com/public/api/v1/delete">here</a>.</p>
+</body></html>
+
+
+Mauricio.Davalos@MDAVALOSL-NH01 MINGW64 ~/Desktop/API_AUTOMATION_PYTHON/API_Automation_Python_MauricioDavalos (main)
+$ curl -X DELETE "https://dummy.restapiexample.com/api/v1/delete#2121/-2134"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   825    0   825    0     0   1308      0 --:--:-- --:--:-- --:--:--  1313<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Method Not Allowed</title>
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "405 Method Not Allowed".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
+</html>
