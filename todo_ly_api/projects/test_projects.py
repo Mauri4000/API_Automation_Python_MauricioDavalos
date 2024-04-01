@@ -1,6 +1,6 @@
 import json
 
-import pytest
+import allure
 import logging
 
 from helpers.rest_client import RestClient
@@ -9,6 +9,8 @@ from utils.logger import get_logger
 LOGGER = get_logger(__name__, logging.DEBUG)
 
 
+@allure.epic("TODOLY API")
+@allure.story("Projects")
 class TestProjects:
     url_todo_ly_extension = None
     url_todo_ly = None
@@ -23,13 +25,22 @@ class TestProjects:
         cls.list_projects = []
         cls.rest_client = RestClient()
 
-    @pytest.mark.project
+    @allure.feature("List Projects")
+    @allure.title("Test get all projects")
+    @allure.description("Test that show the response for all created projects")
+    @allure.tag("acceptance", "users", "sanity")
+    @allure.testcase("TC-123")
     def test_get_all_projects(self):
 
         response = self.rest_client.request("get", url=self.url_todo_ly_with_extension)
 
         assert response.status_code == 200, "wrong status code, expected 200"
 
+    @allure.feature("Create Project")
+    @allure.title("Test create a project")
+    @allure.description("Test that show the response of created project")
+    @allure.tag("acceptance", "users", "sanity")
+    @allure.testcase("TC-123")
     def test_create_project(self):
 
         body_project = {
@@ -42,6 +53,11 @@ class TestProjects:
         self.list_projects.append(id_project_created)
         assert response.status_code == 200, "wrong status code, expected 200"
 
+    @allure.feature("Delete Project")
+    @allure.title("Test delete a project")
+    @allure.description("Test that delete a project by id")
+    @allure.tag("acceptance", "users", "sanity")
+    @allure.testcase("TC-123")
     def test_delete_project(self, create_project):
         id_project_delete = create_project["Id"]
         url_todo_ly = f"{self.url_todo_ly}/{id_project_delete}{self.url_todo_ly_extension}"
@@ -50,6 +66,11 @@ class TestProjects:
 
         assert response.status_code == 200, "wrong status code, expected 200"
 
+    @allure.feature("Update Project")
+    @allure.title("Test update a project")
+    @allure.description("Test that updates a project by id")
+    @allure.tag("acceptance", "users", "sanity")
+    @allure.testcase("TC-123")
     def test_update_project(self, create_project):
         id_project_update = create_project["Id"]
         LOGGER.debug("Project to update: %s", id_project_update)
