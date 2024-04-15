@@ -1,6 +1,10 @@
 @items @todoly @sanity
   Feature: Items
 
+    @critical
+    @allure.label.owner:ET
+    @allure.link:https://dev.example.com/
+    @allure.issue:API-123
     Scenario: Verify all items are returned when get all item endpoint is call
       As user I want to get all the items from TODOLY API
 
