@@ -1,0 +1,33 @@
+{
+    "request": {
+      "method": "DELETE",
+      "url": "/projects"
+    },
+    "response": {
+        "body":
+            {
+              "Id": 4196301,
+              "Content": "Mauricio PTM",
+              "ItemsCount": 0,
+              "Icon": 0,
+              "ItemType": 2,
+              "ParentId": null,
+              "Collapsed": false,
+              "ItemOrder": 161,
+              "Children": [],
+              "IsProjectShared": false,
+              "ProjectShareOwnerName": null,
+              "ProjectShareOwnerEmail": null,
+              "IsShareApproved": false,
+              "IsOwnProject": true,
+              "LastSyncedDateTime": "/Date(1712368278146)/",
+              "LastUpdatedDate": "/Date(1712368278147)/",
+              "Deleted": true,
+              "SyncClientCreationId": null
+            }
+    },
+    "headers": {
+      "Content-type": "application/json; charset=utf-8"
+    },
+    "status_code": 200
+}

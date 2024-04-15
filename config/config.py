@@ -10,3 +10,5 @@ URL_TODO_LY = "https://todo.ly/api"
 HEADERS_TODO_LY = {
             "Token": token_todoly
 }
+
+abs_path = os.path.abspath(__file__ + "../../../")

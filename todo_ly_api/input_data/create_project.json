@@ -1,0 +1,33 @@
+{
+    "request": {
+      "method": "POST",
+      "url": "/projects"
+    },
+    "response": {
+        "body":
+            {
+                "Id": 4195803,
+                "Content": "Mauricio 987",
+                "ItemsCount": 0,
+                "Icon": 0,
+                "ItemType": 2,
+                "ParentId": null,
+                "Collapsed": false,
+                "ItemOrder": 76,
+                "Children": [],
+                "IsProjectShared": false,
+                "ProjectShareOwnerName": null,
+                "ProjectShareOwnerEmail": null,
+                "IsShareApproved": false,
+                "IsOwnProject": true,
+                "LastSyncedDateTime": "/Date(1712364075397)/",
+                "LastUpdatedDate": "/Date(1711294158347)/",
+                "Deleted": false,
+                "SyncClientCreationId": null
+            }
+    },
+    "headers": {
+      "Content-type": "application/json; charset=utf-8"
+    },
+    "status_code": 200
+}

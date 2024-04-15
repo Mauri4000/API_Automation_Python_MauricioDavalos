@@ -1,0 +1,42 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/items"
+    },
+    "response": {
+        "body": [
+            {
+              "Id": 11278824,
+              "Content": "New Item",
+              "ItemType": 1,
+              "Checked": false,
+              "ProjectId": null,
+              "ParentId": null,
+              "Path": "",
+              "Collapsed": false,
+              "DateString": null,
+              "DateStringPriority": 0,
+              "DueDate": "",
+              "Recurrence": null,
+              "ItemOrder": null,
+              "Priority": 4,
+              "LastSyncedDateTime": "/Date(1712367547249)/",
+              "Children": [],
+              "DueDateTime": null,
+              "CreatedDate": "/Date(1711396910493)/",
+              "LastCheckedDate": null,
+              "LastUpdatedDate": "/Date(1711396910493)/",
+              "Deleted": false,
+              "Notes": "",
+              "InHistory": false,
+              "SyncClientCreationId": null,
+              "DueTimeSpecified": true,
+              "OwnerId": 703469
+            }
+        ]
+    },
+    "headers": {
+      "Content-type": "application/json; charset=utf-8"
+    },
+    "status_code": 200
+}

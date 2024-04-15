@@ -4,6 +4,7 @@ import allure
 import logging
 
 from helpers.rest_client import RestClient
+from helpers.validate_response import ValidateResponse
 from utils.logger import get_logger
 
 LOGGER = get_logger(__name__, logging.DEBUG)
@@ -24,6 +25,7 @@ class TestProjects:
         cls.url_todo_ly_with_extension = cls.url_todo_ly + cls.url_todo_ly_extension
         cls.list_projects = []
         cls.rest_client = RestClient()
+        cls.validate = ValidateResponse()
 
     @allure.feature("List Projects")
     @allure.title("Test get all projects")
@@ -34,7 +36,8 @@ class TestProjects:
 
         response = self.rest_client.request("get", url=self.url_todo_ly_with_extension)
 
-        assert response.status_code == 200, "wrong status code, expected 200"
+        self.validate.validate_response(response,"get_all_projects")
+        #assert response.status_code == 200, "wrong status code, expected 200"
 
     @allure.feature("Create Project")
     @allure.title("Test create a project")
@@ -49,9 +52,10 @@ class TestProjects:
 
         response = self.rest_client.request("post", self.url_todo_ly_with_extension, body=json.dumps(body_project))
 
-        id_project_created = response.json()["Id"]
+        id_project_created = response["body"]["Id"]
         self.list_projects.append(id_project_created)
-        assert response.status_code == 200, "wrong status code, expected 200"
+        #assert response.status_code == 200, "wrong status code, expected 200"
+        self.validate.validate_response(response, "create_project")
 
     @allure.feature("Delete Project")
     @allure.title("Test delete a project")
@@ -93,5 +97,5 @@ class TestProjects:
         for id_project in cls.list_projects:
             url_delete_project = f"{cls.url_todo_ly}/{id_project}{cls.url_todo_ly_extension}"
             response = cls.rest_client.request("delete", url=url_delete_project)
-            if response.status_code == 204:
+            if response["status_code"] == 204:
                 LOGGER.info("Project Id deleted: %s", id_project)

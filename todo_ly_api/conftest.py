@@ -23,7 +23,7 @@ def create_project(request):
     }
     url_project = URL_TODO_LY + "/projects.json"
 
-    response = rest_client.request("post",url_project, body=json.dumps(body_project))
+    response = rest_client.request("post", url_project, body=json.dumps(body_project))
 
     return response.json()
 
